@@ -26,23 +26,32 @@ function toString(){
 
 print("Hello Welcome to IE Finance");
 putstr("What will you like to do? \n Enter => 1 for Account Opening \n Enter => 2 for Deposit \n Enter => 3 to Withdraw \n ");
-var opt = readline();
+var opt = +readline();
+var account = new Checking(init);
 
 switch (opt) {
     case "1":
             putstr("Please Enter Initial Accont opening amount ");
             var init = +readline();
-            var account = new Checking(init);
         break;
     case "2":
-        putstr("Please Enter amount to deposit ");
-        var deposite = +readline();
-        account.deposit(deposite);
-        print(account.toString());
+            putstr("Do you have an account \n Enter 1 for Yes\n Enter 2 for No")
+            var res = +readline();
+            if (res === "1") {
+                putstr("Please Enter amount to deposit ");
+                var deposite = +readline();
+                account.deposit(deposite);
+                print(account.toString());
+            }else if(res === "2"){
+                print("Please Create and Account");
+            } else {
+                print("Invalide Input");
+            }
+            
         break;
     case "3":
             putstr("Please Enter amount to withdraw ");
-            var withdrawer = readline();
+            var withdrawer = +readline();
             account.withdraw(withdrawer);
             print(account.toString());
         break;
