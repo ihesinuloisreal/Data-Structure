@@ -31,6 +31,7 @@
 //     print("Student " + parseInt(row+1) + ' Average: ' + average.toFixed(2));
 //     total = 0;
 //     average = 0.0;
+//     print(grade);
 // }
 
 // var grade = [[89,77,87,90],[76,82,81],[91,94,89]];
@@ -47,12 +48,43 @@
 // }
 
 // A code Snippet to generate a 3 by 3 metrix in an artay
-var arr = [];
-for(var i = 0; i < 3; i++){
-    var arr2 = [];
-    for(var j = 0; j < 3; j++){
-        arr2[j] = Math.floor(Math.random()*101);
-    }
-    arr[i] = arr2;
+// var arr = [];
+// for(var i = 0; i < 3; i++){
+//     var arr2 = [];
+//     for(var j = 0; j < 3; j++){
+//         arr2[j] = Math.floor(Math.random()*101);
+//     }
+//     arr[i] = arr2;
+// }
+// print(arr)
+
+function Matrix() {
+    this.arr = [];
+    this.generate = generate;
 }
-print(arr)
+
+function generate(numrow, numcol) {
+    var arr2 = [];
+    for(var i = 0; i < numrow; i++){
+        for(var j = 0; j < numcol; j++){
+            arr2[j] = Math.floor(Math.random()*101);
+            this.arr[i] = arr2;
+
+        }
+    }
+    return this.arr;
+}
+
+// var arr = [];
+// var arr2 = [];
+
+const matrix = new Matrix();
+
+putstr("Please enter number of row ");
+var numrow = readline();
+putstr("Please enter number of column ");
+var numcol = readline();
+matrix.generate(numrow, numcol);
+
+
+print(matrix.generate());
