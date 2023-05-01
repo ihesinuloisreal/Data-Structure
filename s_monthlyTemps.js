@@ -1,19 +1,21 @@
-function weekTemps() {
+function monthTemps() {
     this.dataStore = [];
     this.add = add;
     this.average = average;
 }
 function add(temp) {
-    for (var i = 0; i < this.dataStore.length; i++) {
+    for (var i = 0; i < 12; i++) {
         var week = [];
-        for (var j = 0; j < week.length; j++) {
-            
-        week[j].push(temp);
-        this.dataStore[i] = week[j]
+        for (var j = 0; j < 4; j++) {
+            week.push(temp);
             
             
         }
+
     }
+    this.dataStore.push(week);
+
+
 
 }
 function average() {
@@ -26,13 +28,23 @@ function average() {
     return total / this.dataStore.length;
 
 }
-    var thisWeek = new weekTemps();
-    thisWeek.add(52);
-    thisWeek.add(55);
-    thisWeek.add(61);
-    thisWeek.add(65);
-    thisWeek.add(55);
-    thisWeek.add(50);
-    thisWeek.add(52);
-    thisWeek.add(49);
-    print(thisWeek.average());
+    var thisMonth = new monthTemps();
+    thisMonth.add(52);
+    thisMonth.add(55);
+    thisMonth.add(61);
+    thisMonth.add(65);
+    thisMonth.add(55);
+    thisMonth.add(50);
+    thisMonth.add(52);
+    thisMonth.add(49);
+    thisMonth.add(52);
+    thisMonth.add(55);
+    thisMonth.add(61);
+    thisMonth.add(65);
+    thisMonth.add(55);
+    thisMonth.add(50);
+    thisMonth.add(52);
+    thisMonth.add(49);
+    thisMonth.add(52);
+
+    print(thisMonth.average());

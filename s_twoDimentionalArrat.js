@@ -71,7 +71,9 @@ function generate(numrow, numcol) {
             this.arr[i] = arr2;
 
         }
+
     }
+
     return this.arr;
 }
 
